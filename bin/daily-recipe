@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+require 'bundler/setup'
+require 'daily_recipe'
+
+
+
+
+DailyRecipe::CLI.new.call
