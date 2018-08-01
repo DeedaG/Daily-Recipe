@@ -3,6 +3,7 @@
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/daily_recipe`. To experiment with that code, run `bin/console` for an interactive prompt.
 
 TODO: Delete this and the text above, and describe your gem
+ This gem is designed to encourage the user to try eating vegan for 30 days.  It provides the user with two recipe choices each day.  The user is given more information when they choose one of the recipes.
 
 ## Installation
 
@@ -22,13 +23,13 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: The gem is designed to help someone eat healthier and possible even become a vegetarian.  The user is offered two recipes each day for 30 days, by typing ./bin/daily_recipe.  The user provides input about the number of days they've been eating the vegan recipes and selects a daily recipe.  When the user selects a daily recipe, they are given a url to click on that leads them to the recipe.  When the user has reached 30 days of recipes, they are told, "Congratulations, you are now a vegan!"
+Follow the directions above to install this gem.  Begin the CLI by typing ./bin/daily-recipe.  The user provides input about the number of days they've been eating the vegan recipes and two new recipes are provided each day.  The user can then type in the number corresponding with their favorite recipe and they are given a url that leads to the recipe's web page.  When the user has reached 30 days of recipes, they are told, "Congratulations, you are now a vegan!"  Type "exit" to exit the CLI.
 
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to rubygems.org.
 
 ## Contributing
 
