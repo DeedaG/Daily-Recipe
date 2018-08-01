@@ -1,0 +1,44 @@
+
+1. bundle gem daily_recipe
+2. Start with project structure
+3. Entry point?
+4. Build the CLI interface
+5. Stub out interface
+6. Start making things work
+7. Discover objects
+8. Program
+
+encapsulating CLI in the one object in bin/daily-recipe
+
+A CLI for daily vegan recipes for 30 days
+ -using two URL’s
+
+https://www.foodandwine.com/special-diets/vegan/vegan-recipes
+  30 Days of Vegan Recipes
+
+https://www.realsimple.com/food-recipes/recipe-collections-favorites/healthy-meals/vegetarian-recipes
+  31 Vegetarian Recipes So Satisfying You’ll Want to Go Meatless for an Entire Month
+
+Show a list of recipes
+  1.   Bean and Potato Vegan Enchiladas
+
+2.  Flaky Mushroom and Gruyère Tarts
+
+
+
+How many days vegan?  Enter day 1-30
+
+
+Which recipe do you want to try?
+  1
+
+What is a recipe?
+
+it has a name
+it has a URL
+it has a list of ingredients
+it has a preparation time
+
+type
+./daily-recipe
+ to start
