@@ -7,6 +7,7 @@ attr_accessor :title, :link, :description
     self.scrape_recipes
   end
 
+  #this method shovels recipe information from two websites into an array that can be manipulated
   def self.scrape_recipes
     recipes = []
 
@@ -16,6 +17,7 @@ attr_accessor :title, :link, :description
     recipes
   end
 
+  # scraping recipes and information from food and wine
   def self.scrape_foodandwine
     #@days = DailyRecipe::CLI.days_vegan.to_i
     doc = Nokogiri::HTML(open("https://www.foodandwine.com/special-diets/vegan/vegan-recipes"))
@@ -30,6 +32,7 @@ attr_accessor :title, :link, :description
 
   end
 
+  #scraping real simple web page for recipes and information
   def self.scrape_realsimple
 
     doc = Nokogiri::HTML(open("https://www.realsimple.com/food-recipes/recipe-collections-favorites/healthy-meals/vegetarian-recipes"))
