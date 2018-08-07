@@ -2,7 +2,6 @@
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/daily_recipe`. To experiment with that code, run `bin/console` for an interactive prompt.
 
-TODO: Delete this and the text above, and describe your gem
  This gem is designed to encourage the user to try eating vegan for 30 days.  It provides the user with two recipe choices each day.  The user is given more information when they choose one of the recipes.
 
 ## Installation
@@ -23,7 +22,7 @@ Or install it yourself as:
 
 ## Usage
 
-Follow the directions above to install this gem.  Begin the CLI by typing ./bin/daily-recipe.  The user provides input about the number of days they've been eating the vegan recipes and two new recipes are provided each day.  The user can then type in the number corresponding with their favorite recipe and they are given a url that leads to the recipe's web page.  When the user has reached 30 days of recipes, they are told, "Congratulations, you are now a vegan!"  Type "exit" to exit the CLI.
+Follow the directions above to install this gem.  Begin the CLI by typing ./bin/daily-recipe.  The user provides input about the number of days they've been eating the vegan recipes and two new recipes are provided each day.  The user can then type in the number corresponding with their favorite recipe and they are given a description of the recipe along with a url that leads to the recipe's web page.  When the user has reached 30 days of recipes, they are told, "Congratulations, you are now a vegan!"  Type "exit" to exit the CLI.
 
 ## Development
 
