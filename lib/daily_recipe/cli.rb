@@ -13,8 +13,8 @@ class DailyRecipe::CLI
   def days_vegan
     puts "How many days have you been eating vegan?  Enter 1 -30."
     @days = gets.strip.to_i
-     if @days > 30
-      puts "Congratulations!  You're a vegan."
+    if @days > 30
+       puts "Congratulations!  You're a vegan."
     end
   end
 
@@ -25,11 +25,12 @@ class DailyRecipe::CLI
     @recipes.each.with_index(1) do |recipe, i|
       puts "#{i}. #{recipe.title[@days]}"
       #binding.pry
+      end
+    else
     end
-  else
- end
-end
+  end
 
+  #added a description of the chosen recipe
   def choose_recipe
     input = nil
     while input != "exit"
@@ -38,8 +39,11 @@ end
 
       if input.to_i > 0
         todays_recipe = @recipes[input.to_i - 1]
-        puts "#{todays_recipe.title[@days]} - #{todays_recipe.description[@days]} - #{todays_recipe.link} "
-      #binding.pry
+        puts "#{todays_recipe.title[@days]}
+
+        #{todays_recipe.description[@days]}
+
+        #{todays_recipe.link} "
       else
       end
     end
