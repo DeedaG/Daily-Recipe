@@ -1,7 +1,5 @@
 # DailyRecipe
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/daily_recipe`. To experiment with that code, run `bin/console` for an interactive prompt.
-
  This gem is designed to encourage the user to try eating vegan for 30 days.  It provides the user with two recipe choices each day.  The user is given more information when they choose one of the recipes.
 
 ## Installation
@@ -32,7 +30,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at git@github.com:DeedaG/Daily-Recipe.git. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/'DeedaG'/daily_recipe. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
