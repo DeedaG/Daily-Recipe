@@ -15,10 +15,8 @@ attr_accessor :title, :link, :description, :day
   #this method shovels recipe information from two websites into an array that can be manipulated
   def self.scrape_recipes
     #recipes = []
-
     self.scrape_foodandwine
-    #self.scrape_realsimple
-
+    self.scrape_realsimple
     #recipes
   end
 
@@ -43,16 +41,25 @@ attr_accessor :title, :link, :description, :day
   #scraping real simple web page for recipes and information
   #improved spacing in code and scraping
   def self.scrape_realsimple
-
     doc = Nokogiri::HTML(open("https://www.realsimple.com/food-recipes/recipe-collections-favorites/healthy-meals/vegetarian-recipes"))
-
-    recipe = self.new
-    recipe.title = doc.search("div.media-body.clearfix h2").text.strip.split("\n").each_slice(2).map(&:first).each(&:lstrip!)
-    recipe.link = "https://www.realsimple.com/food-recipes/recipe-collections-favorites/healthy-meals/vegetarian-recipes"
-    recipe.description = doc.css(".caption.margin-24-bottom").text.strip.split("\r\n")
-    recipe
+    counter = 0
+    30.times do
+      title = doc.search("div.media-body.clearfix h2")[counter].text.strip.split("\n").each_slice(2).map(&:first).each(&:lstrip!)[0]
+      recipe = self.new
+      recipe.title = title
+      recipe.day = counter + 1
+      recipe.link = "https://www.realsimple.com/food-recipes/recipe-collections-favorites/healthy-meals/vegetarian-recipes"
+      recipe.description = doc.css(".caption.margin-24-bottom")[counter].text.strip.split("\r\n")[0]
+      @@all << recipe
+      counter += 1
+    end
 
   end
+
+    #recipe.title = doc.search("div.media-body.clearfix h2").text.strip.split("\n").each_slice(2).map(&:first).each(&:lstrip!)
+    #recipe.link = "https://www.realsimple.com/food-recipes/recipe-collections-favorites/healthy-meals/vegetarian-recipes"
+    #recipe.description = doc.css(".caption.margin-24-bottom").text.strip.split("\r\n")
+    #recipe
 
   def self.recipes_by_day(day)
     self.all.select do |recipe|
