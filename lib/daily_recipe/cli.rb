@@ -4,6 +4,7 @@ class DailyRecipe::CLI
 
 
   def call
+    DailyRecipe::Recipe.today
     days_vegan
     list_recipes
     choose_recipe
@@ -20,13 +21,12 @@ class DailyRecipe::CLI
 
   def list_recipes
     if @days < 31
-    puts "Today's Recipe Choices"
-    @recipes = DailyRecipe::Recipe.today
-    @recipes.each.with_index(1) do |recipe, i|
-      puts "#{i}. #{recipe.title[@days]}"
-      #binding.pry
+      puts "Today's Recipe Choices"
+      @recipes = DailyRecipe::Recipe.recipes_by_day(@days)
+      @recipes.each.with_index(1) do |recipe, i|
+        puts "#{i}. #{recipe.title}"
+        #binding.pry
       end
-    else
     end
   end
 
@@ -39,12 +39,11 @@ class DailyRecipe::CLI
 
       if input.to_i > 0
         todays_recipe = @recipes[input.to_i - 1]
-        puts "#{todays_recipe.title[@days]}
+        puts "#{todays_recipe.title}
 
-        #{todays_recipe.description[@days]}
+        #{todays_recipe.description}
 
         #{todays_recipe.link} "
-      else
       end
     end
   end
