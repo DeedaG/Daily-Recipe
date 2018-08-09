@@ -1,6 +1,12 @@
 class DailyRecipe::Recipe
 
-attr_accessor :title, :link, :description
+attr_accessor :title, :link, :description, :day
+
+  @@all = []
+
+  def self.all
+    @@all
+  end
 
   def self.today
     self.scrape_recipes
@@ -8,24 +14,29 @@ attr_accessor :title, :link, :description
 
   #this method shovels recipe information from two websites into an array that can be manipulated
   def self.scrape_recipes
-    recipes = []
+    #recipes = []
 
-    recipes << self.scrape_foodandwine
-    recipes << self.scrape_realsimple
+    self.scrape_foodandwine
+    #self.scrape_realsimple
 
-    recipes
+    #recipes
   end
 
   # scraping recipes and information from food and wine
   #improved spacing in code and scraping
   def self.scrape_foodandwine
     doc = Nokogiri::HTML(open("https://www.foodandwine.com/special-diets/vegan/vegan-recipes"))
-
-    recipe = self.new
-    recipe.title = doc.search("a.headline-link").text.strip.split(":")
-    recipe.link = doc.css(".caption.margin-24-bottom a").attribute("href").value
-    recipe.description = doc.css(".caption.margin-24-bottom").text.strip.split("\r\n").each(&:lstrip!)
-    recipe
+    counter = 0
+    30.times do
+      title = doc.search("a.headline-link")[counter].text.split(":")[1].strip
+      recipe = self.new
+      recipe.title = title
+      recipe.day = counter + 1
+      recipe.link = doc.css(".caption.margin-24-bottom a")[counter].attribute("href").value
+      recipe.description = doc.css(".caption.margin-24-bottom")[counter].text.strip.split("\r\n").each(&:lstrip!)[0]
+      @@all << recipe
+      counter += 1
+    end
 
   end
 
@@ -41,5 +52,11 @@ attr_accessor :title, :link, :description
     recipe.description = doc.css(".caption.margin-24-bottom").text.strip.split("\r\n")
     recipe
 
+  end
+
+  def self.recipes_by_day(day)
+    self.all.select do |recipe|
+      recipe.day == day
+    end
   end
 end
